@@ -69,6 +69,14 @@ function App() {
       <Route element={<WithNavbarLayout />}>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+  <Route path="/login" element={<Login />} />   
+      </Route>
+
+      {/* without navbar */}
+      <Route element={<WithoutNavbarLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/conform" element={<ContactForm />} />
         <Route
           path="/admin"
           element={
@@ -79,14 +87,6 @@ function App() {
             )
           }
         />
-      </Route>
-
-      {/* without navbar */}
-      <Route element={<WithoutNavbarLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/conform" element={<ContactForm />} />
-        <Route path="/login" element={<Login />} />
       </Route>
     </Routes>
   );
