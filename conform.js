@@ -16,6 +16,11 @@ const ContactForm = () => {
     alert('Message sent!');
   };
 
+  //mailto link
+  const mailtoLink = `mailto:arielledades@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\n${message}`
+  )}`;
+
   return (
     <section className="contact-form">
       <form onSubmit={handleSubmit}>
@@ -47,6 +52,13 @@ const ContactForm = () => {
           required
         ></textarea>
         <button type="submit">Send</button>
+
+        {/* Message Me button */}
+        <a href={mailtoLink}>
+          <button type="button" style={{ marginTop: '10px' }}>
+            or Email me directly!
+          </button>
+        </a>
       </form>
     </section>
   );
